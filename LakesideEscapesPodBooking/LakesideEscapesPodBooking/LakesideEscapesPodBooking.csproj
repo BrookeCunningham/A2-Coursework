@@ -1,0 +1,531 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props" Condition="Exists('..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C95DD26C-FF5E-4D24-8429-1AD38F2DC99B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>LakesideEscapesPodBooking</RootNamespace>
+    <AssemblyName>LakesideEscapesPodBooking</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1620.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1620.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=23ec7fc2d6eaa4a5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Server.1.0.0\lib\net46\Microsoft.SqlServer.Server.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.160.1000.6\lib\net462\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AllPodDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AllPodDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Booking.cs" />
+    <Compile Include="bookingReport1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bookingReport1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="courseDetailsReportDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>courseDetailsReportDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CourseGuestDetailsReportDataSet.cs">
+      <DependentUpon>CourseGuestDetailsReportDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CourseGuestDetailsReportDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CourseGuestDetailsReportDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddBooking.Designer.cs">
+      <DependentUpon>FormAddBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCreateGuest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCreateGuest.Designer.cs">
+      <DependentUpon>FormCreateGuest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditBooking.Designer.cs">
+      <DependentUpon>FormEditBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditGuest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditGuest.Designer.cs">
+      <DependentUpon>FormEditGuest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditPod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditPod.Designer.cs">
+      <DependentUpon>FormEditPod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenu.Designer.cs">
+      <DependentUpon>FormMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReport.Designer.cs">
+      <DependentUpon>FormReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormShowDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormShowDetails.Designer.cs">
+      <DependentUpon>FormShowDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormViewBookings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormViewBookings.Designer.cs">
+      <DependentUpon>FormViewBookings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormViewGuest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormViewGuest.Designer.cs">
+      <DependentUpon>FormViewGuest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormViewPod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormViewPod.Designer.cs">
+      <DependentUpon>FormViewPod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guest.cs" />
+    <Compile Include="Pod.cs" />
+    <Compile Include="PodBookingDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PodBookingDBDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PodDescription.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="rateOfBookingsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rateOfBookingsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportCourseWithGuestDetails.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportCourseWithGuestDetails.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="tblBookingDAL.cs" />
+    <Compile Include="tblBookingDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tblBookingDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="tblBookingGraphDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tblBookingGraphDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="tblBookingReportDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tblBookingReportDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="tblCourseGuestsDAL.cs" />
+    <Compile Include="tblGuestDAL.cs" />
+    <Compile Include="tblPodDAL.cs" />
+    <Compile Include="tblPodDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tblPodDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="tblPodDataSetReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tblPodDataSetReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="tblPodDescriptionDAL.cs" />
+    <Compile Include="tblPodDescriptionDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tblPodDescriptionDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="tblViewGuestDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tblViewGuestDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Validation.cs" />
+    <Compile Include="ViewPodsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewPodsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTblPodDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewTblPodDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="bookingRateGraphReport.rdlc" />
+    <EmbeddedResource Include="bookingReport.rdlc" />
+    <EmbeddedResource Include="courseGuestsDetailsReport.rdlc" />
+    <EmbeddedResource Include="FormAddBooking.resx">
+      <DependentUpon>FormAddBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCreateGuest.resx">
+      <DependentUpon>FormCreateGuest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditBooking.resx">
+      <DependentUpon>FormEditBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditGuest.resx">
+      <DependentUpon>FormEditGuest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditPod.resx">
+      <DependentUpon>FormEditPod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenu.resx">
+      <DependentUpon>FormMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReport.resx">
+      <DependentUpon>FormReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormShowDetails.resx">
+      <DependentUpon>FormShowDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormViewBookings.resx">
+      <DependentUpon>FormViewBookings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormViewGuest.resx">
+      <DependentUpon>FormViewGuest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormViewPod.resx">
+      <DependentUpon>FormViewPod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="guestReport.rdlc" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="podReport.rdlc" />
+    <EmbeddedResource Include="rateOfBookingsReport.rdlc" />
+    <EmbeddedResource Include="reportBooking1.rdlc" />
+    <None Include="AllPodDataSet.xsc">
+      <DependentUpon>AllPodDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AllPodDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AllPodDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AllPodDataSet.xss">
+      <DependentUpon>AllPodDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="bookingReport1.xsc">
+      <DependentUpon>bookingReport1.xsd</DependentUpon>
+    </None>
+    <None Include="bookingReport1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bookingReport1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="bookingReport1.xss">
+      <DependentUpon>bookingReport1.xsd</DependentUpon>
+    </None>
+    <None Include="courseDetailsReportDataSet.xsc">
+      <DependentUpon>courseDetailsReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="courseDetailsReportDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>courseDetailsReportDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="courseDetailsReportDataSet.xss">
+      <DependentUpon>courseDetailsReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CourseGuestDetailsReportDataSet.xsc">
+      <DependentUpon>CourseGuestDetailsReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CourseGuestDetailsReportDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CourseGuestDetailsReportDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CourseGuestDetailsReportDataSet.xss">
+      <DependentUpon>CourseGuestDetailsReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="PodBookingDBDataSet1.xsc">
+      <DependentUpon>PodBookingDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="PodBookingDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PodBookingDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PodBookingDBDataSet1.xss">
+      <DependentUpon>PodBookingDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="rateOfBookingsDataSet.xsc">
+      <DependentUpon>rateOfBookingsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="rateOfBookingsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>rateOfBookingsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="rateOfBookingsDataSet.xss">
+      <DependentUpon>rateOfBookingsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ReportCourseWithGuestDetails.xsc">
+      <DependentUpon>ReportCourseWithGuestDetails.xsd</DependentUpon>
+    </None>
+    <None Include="ReportCourseWithGuestDetails.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportCourseWithGuestDetails.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReportCourseWithGuestDetails.xss">
+      <DependentUpon>ReportCourseWithGuestDetails.xsd</DependentUpon>
+    </None>
+    <None Include="tblBookingDataSet.xsc">
+      <DependentUpon>tblBookingDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="tblBookingDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>tblBookingDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tblBookingDataSet.xss">
+      <DependentUpon>tblBookingDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="tblBookingGraphDataSet.xsc">
+      <DependentUpon>tblBookingGraphDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="tblBookingGraphDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>tblBookingGraphDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="tblBookingGraphDataSet.xss">
+      <DependentUpon>tblBookingGraphDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="tblBookingReportDataSet.xsc">
+      <DependentUpon>tblBookingReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="tblBookingReportDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>tblBookingReportDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tblBookingReportDataSet.xss">
+      <DependentUpon>tblBookingReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="tblPodDataSet.xsc">
+      <DependentUpon>tblPodDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="tblPodDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>tblPodDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tblPodDataSet.xss">
+      <DependentUpon>tblPodDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="tblPodDataSetReport.xsc">
+      <DependentUpon>tblPodDataSetReport.xsd</DependentUpon>
+    </None>
+    <None Include="tblPodDataSetReport.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>tblPodDataSetReport.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tblPodDataSetReport.xss">
+      <DependentUpon>tblPodDataSetReport.xsd</DependentUpon>
+    </None>
+    <None Include="tblPodDescriptionDataSet.xsc">
+      <DependentUpon>tblPodDescriptionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="tblPodDescriptionDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>tblPodDescriptionDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tblPodDescriptionDataSet.xss">
+      <DependentUpon>tblPodDescriptionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="tblViewGuestDataSet.xsc">
+      <DependentUpon>tblViewGuestDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="tblViewGuestDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>tblViewGuestDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tblViewGuestDataSet.xss">
+      <DependentUpon>tblViewGuestDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ViewPodsDataSet.xsc">
+      <DependentUpon>ViewPodsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ViewPodsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ViewPodsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ViewPodsDataSet.xss">
+      <DependentUpon>ViewPodsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ViewTblPodDataSet.xsc">
+      <DependentUpon>ViewTblPodDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ViewTblPodDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ViewTblPodDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ViewTblPodDataSet.xss">
+      <DependentUpon>ViewTblPodDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PodBookingDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PodBookingDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>PodBookingDB.mdf</DependentUpon>
+    </Content>
+    <None Include="Resources\pbHeader5.png" />
+    <None Include="Resources\pbHeader4.png" />
+    <None Include="Resources\pbHeader3.png" />
+    <None Include="Resources\pbMain.png" />
+    <None Include="Resources\pbHeader2.png" />
+    <None Include="Resources\pbHeader1.png" />
+    <None Include="Resources\pbHeader.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props'))" />
+  </Target>
+</Project>
